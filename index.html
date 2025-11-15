@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Sain | Futuristic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="orbCanvas" class="orb-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-overlay" aria-hidden="true"></div>
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" aria-hidden="true"></div>
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+  <div class="sparkle-container" aria-hidden="true"></div>
+  <div class="holographic-icons" aria-hidden="true">
+    <div class="holographic-icon" data-icon="💻">💻</div>
+    <div class="holographic-icon" data-icon="🚀">🚀</div>
+    <div class="holographic-icon" data-icon="✨">✨</div>
+    <div class="holographic-icon" data-icon="⚡">⚡</div>
+    <div class="holographic-icon" data-icon="🎨">🎨</div>
+    <div class="holographic-icon" data-icon="🔮">🔮</div>
+  </div>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading portfolio...</p>
+    </div>
+  </div>
+
+  <nav class="nav-glass">
+    <div class="nav-brand">
+      <span class="nav-logo">RS</span>
+      <span class="nav-name">Rahul Sain</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#home" data-page-target="home" class="is-active">Home</a>
+      <a href="#about" data-page-target="about">About</a>
+      <a href="#skills" data-page-target="skills">Skills</a>
+      <a href="#projects" data-page-target="projects">Projects</a>
+      <a href="#certificates" data-page-target="certificates">Certificates</a>
+      <a href="#contact" data-page-target="contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="page-block section-padding is-active" data-page="home">
+      <header class="page-header">
+        <div>
+          <span class="heading-kicker">Home</span>
+          <h2>Immersive introduction to Rahul's universe</h2>
+          <p>Explore the core story, craft, and highlights before diving deeper into the portfolio journey.</p>
+        </div>
+        <div class="page-subnav" role="tablist">
+          <button class="subnav-btn is-active" data-subpage-target="home-main" role="tab" aria-selected="true">Main Intro</button>
+          <button class="subnav-btn" data-subpage-target="home-services" role="tab" aria-selected="false">What I Do</button>
+          <button class="subnav-btn" data-subpage-target="home-highlights" role="tab" aria-selected="false">Highlights</button>
+        </div>
+      </header>
+
+      <div class="subpage-wrapper">
+        <article class="subpage hero-subpage hero is-active" data-subpage="home-main" role="tabpanel">
+          <div class="hero-welcome-animation" aria-hidden="true">
+            <div class="welcome-text">Welcome</div>
+            <div class="welcome-particles"></div>
+          </div>
+          <div class="hero-depth-layers" aria-hidden="true">
+            <div class="depth-ring ring-1"></div>
+            <div class="depth-ring ring-2"></div>
+            <div class="depth-ring ring-3"></div>
+            <div class="depth-beam beam-1"></div>
+            <div class="depth-beam beam-2"></div>
+            <div class="floating-shapes">
+              <div class="floating-shape shape-1"></div>
+              <div class="floating-shape shape-2"></div>
+              <div class="floating-shape shape-3"></div>
+              <div class="floating-shape shape-4"></div>
+            </div>
+          </div>
+          <div class="hero-inner">
+            <div class="hero-media tilt-card" data-tilt>
+              <div class="avatar-wrap" id="avatarWrap">
+                <div class="avatar-ring"></div>
+                <img src="IMG20240325142406.jpg" alt="Rahul Sain portrait" id="avatarImage" />
+                <div class="avatar-glow"></div>
+                <div class="avatar-reactions">
+                  <div class="avatar-reaction wave" data-reaction="wave">👋</div>
+                  <div class="avatar-reaction nod" data-reaction="nod">👍</div>
+                  <div class="avatar-reaction smile" data-reaction="smile">😊</div>
+                </div>
+                <div class="avatar-badge">
+                  <span class="badge-pulse"></span>
+                  <span>Available for collaboration</span>
+                </div>
+                <div class="avatar-tooltip" id="avatarTooltip">Hover or click to interact!</div>
+              </div>
+              <ul class="hero-highlights">
+                <li>
+                  <strong>Fullstack Engineer</strong>
+                  <span>End-to-end development from APIs to UI</span>
+                </li>
+                <li>
+                  <strong>Flutter Developer</strong>
+                  <span>Cross-platform mobile apps with native performance</span>
+                </li>
+                <li class="hero-human-note">
+                  <strong>Co-founder @ Henu Os</strong>
+                  <span>Co-founded with Sidharth Singh, leading technical vision and product development</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="hero-content tilt-card" data-tilt>
+              <div class="hero-greeting">
+                <span class="hero-tagline typing-text">Hi, I'm</span>
+                <div class="hero-name-wrapper">
+                  <h1 class="hero-name-reveal">
+                    Rahul Sain
+                  </h1>
+                  <div class="hero-role-badge">
+                    <span class="hero-role">Fullstack Engineer & Flutter Developer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-badge-cofounder">
+                <span class="cofounder-icon">🚀</span>
+                <span class="cofounder-text">Co-founder of <strong>Henu Os</strong> with Sidharth Singh</span>
+              </div>
+              <p class="hero-description-fade">
+                I build scalable fullstack applications and cross-platform mobile experiences with Flutter.
+                As co-founder of Henu Os, I lead technical architecture and product development, crafting
+                solutions that bridge web, mobile, and cloud ecosystems.
+              </p>
+              <blockquote class="hero-quote">
+                <span class="quote-icon">"</span>
+                <span class="quote-text">Building the future, one line of code at a time—from frontend to backend, mobile to cloud.</span>
+                <span class="quote-icon">"</span>
+              </blockquote>
+              <div class="hero-cta">
+                <button class="primary-btn" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
+                  🚀 Explore Projects
+                </button>
+                <button class="ghost-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                  🤝 Let’s Connect
+                </button>
+              </div>
+              <div class="hero-meta">
+                <a href="mailto:rsurendrasen90@gmail.com">📧 rsurendrasen90@gmail.com</a>
+                <a href="tel:+918079018281">📞 +91 8079018281</a>
+              </div>
+              <div class="hero-status">
+                <span class="status-dot"></span>
+                Building fullstack solutions, Flutter apps, and scaling Henu Os.
+              </div>
+              <div class="hero-storyline">
+                <div class="storyline-node">
+                  <span class="storyline-year">2023</span>
+                  <span class="storyline-note">Started fullstack development journey and Flutter mobile app creation.</span>
+                </div>
+                <div class="storyline-node">
+                  <span class="storyline-year">2024</span>
+                  <span class="storyline-note">Mastered fullstack development and Flutter, building production-ready applications.</span>
+                </div>
+                <div class="storyline-node">
+                  <span class="storyline-year">2025</span>
+                  <span class="storyline-note">Co-founded Henu Os with Sidharth Singh, leading technical architecture and product development.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subpage home-services-enhanced" data-subpage="home-services" role="tabpanel">
+          <div class="services-intro reveal-on-scroll">
+            <h2 class="services-title">What I Do</h2>
+            <p class="services-subtitle">Crafting digital experiences across web, mobile, and cloud platforms</p>
+          </div>
+          <div class="subpage-grid services-grid-enhanced">
+            <div class="service-card service-card-enhanced tilt-card" data-tilt>
+              <div class="service-icon-wrapper">
+                <div class="service-icon">💻</div>
+                <div class="service-icon-glow"></div>
+              </div>
+              <h3>Full Stack Development</h3>
+              <p>
+                Building end-to-end full stack applications with robust backends and responsive frontends. From RESTful APIs
+                to real-time systems, delivering scalable solutions with AWS Cloud and cybersecurity best practices.
+              </p>
+              <ul class="service-features">
+                <li><span class="feature-icon">⚡</span> Backend: Node.js, Express, Django, Python</li>
+                <li><span class="feature-icon">🎨</span> Frontend: React, JavaScript, HTML/CSS</li>
+                <li><span class="feature-icon">🗄️</span> Database: MySQL, MongoDB</li>
+                <li><span class="feature-icon">☁️</span> AWS Cloud deployment & DevOps</li>
+                <li><span class="feature-icon">🔒</span> Cybersecurity & secure coding practices</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-badge">Full Stack</span>
+              </div>
+            </div>
+            <div class="service-card service-card-enhanced tilt-card" data-tilt>
+              <div class="service-icon-wrapper">
+                <div class="service-icon">📱</div>
+                <div class="service-icon-glow"></div>
+              </div>
+              <h3>Flutter Mobile Development</h3>
+              <p>
+                Creating cross-platform mobile applications with Flutter that deliver native performance on
+                both iOS and Android. Focused on beautiful UI, smooth animations, and optimal performance.
+              </p>
+              <ul class="service-features">
+                <li><span class="feature-icon">🚀</span> Cross-platform app development</li>
+                <li><span class="feature-icon">🏗️</span> State management & architecture</li>
+                <li><span class="feature-icon">🎯</span> Custom widgets & UI components</li>
+                <li><span class="feature-icon">⚡</span> Performance optimization</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-badge">Mobile</span>
+              </div>
+            </div>
+            <div class="service-card service-card-enhanced tilt-card" data-tilt>
+              <div class="service-icon-wrapper">
+                <div class="service-icon">🎯</div>
+                <div class="service-icon-glow"></div>
+              </div>
+              <h3>Technical Leadership @ Henu Os</h3>
+              <p>
+                Co-founded Henu Os in 2025 with Sidharth Singh. Leading technical strategy, architecture decisions,
+                and product development. Building scalable solutions and collaborating with the team to bring
+                innovative products to market.
+              </p>
+              <ul class="service-features">
+                <li><span class="feature-icon">🤝</span> Co-founded with Sidharth Singh in 2025</li>
+                <li><span class="feature-icon">🏛️</span> Technical architecture & planning</li>
+                <li><span class="feature-icon">📈</span> Product strategy & development</li>
+                <li><span class="feature-icon">👥</span> Team collaboration & mentorship</li>
+                <li><span class="feature-icon">🔧</span> Fullstack & Flutter solutions</li>
+              </ul>
+              <div class="service-footer">
+                <span class="service-badge">Leadership</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subpage home-highlights-enhanced" data-subpage="home-highlights" role="tabpanel">
+          <div class="highlights-layout">
+            <div class="highlight-card highlight-card-animated tilt-card" data-tilt>
+              <div class="highlight-header">
+                <h3>Impact Snapshot</h3>
+                <div class="highlight-icon">📊</div>
+              </div>
+              <div class="stats-grid stats-grid-enhanced">
+                <div class="stat stat-animated" data-value="15">
+                  <div class="stat-icon">🚀</div>
+                  <strong class="stat-number">0</strong>
+                  <span>Production Projects</span>
+                </div>
+                <div class="stat stat-animated">
+                  <div class="stat-icon">💻</div>
+                  <strong class="stat-number">Fullstack</strong>
+                  <span>End-to-End Apps</span>
+                </div>
+                <div class="stat stat-animated">
+                  <div class="stat-icon">📱</div>
+                  <strong class="stat-number">Flutter</strong>
+                  <span>Mobile Apps</span>
+                </div>
+                <div class="stat stat-animated">
+                  <div class="stat-icon">🎯</div>
+                  <strong class="stat-number">Henu Os</strong>
+                  <span>Co-founder</span>
+                </div>
+              </div>
+            </div>
+            <div class="highlight-card tilt-card" data-tilt>
+              <h3>Technical Stack</h3>
+              <p>
+                Fullstack development with modern frameworks and tools. Building scalable applications
+                that perform across web, mobile, and AWS cloud platforms with cybersecurity best practices.
+              </p>
+              <ul>
+                <li>Backend: Node.js, Express, Django, Python</li>
+                <li>Frontend: React, JavaScript, HTML/CSS</li>
+                <li>Mobile: Flutter, Dart, Cross-platform development</li>
+                <li>Database: MySQL, MongoDB</li>
+              </ul>
+            </div>
+            <div class="highlight-card tilt-card" data-tilt>
+              <h3>Henu Os Vision</h3>
+              <p>
+                Co-founded Henu Os in 2025 with Sidharth Singh. Building a platform that solves real problems with
+                innovative technology. Focused on creating products that scale and deliver value.
+              </p>
+              <ul>
+                <li>Co-founded with Sidharth Singh in 2025</li>
+                <li>Technical leadership and architecture</li>
+                <li>Product strategy and development</li>
+                <li>Team collaboration and mentorship</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page-block section-padding" data-page="about">
+      <header class="page-header">
+        <div>
+          <span class="heading-kicker">About</span>
+          <h2>Journey, milestones, and the mission ahead</h2>
+          <p>Get to know the story behind every build, from education to collaborative impact.</p>
+        </div>
+        <div class="page-subnav" role="tablist">
+          <button class="subnav-btn is-active" data-subpage-target="about-journey" role="tab" aria-selected="true">Personal Journey</button>
+          <button class="subnav-btn" data-subpage-target="about-education" role="tab" aria-selected="false">Education</button>
+          <button class="subnav-btn" data-subpage-target="about-experience" role="tab" aria-selected="false">Experience</button>
+        </div>
+      </header>
+
+      <div class="subpage-wrapper">
+        <article class="subpage is-active" data-subpage="about-journey" role="tabpanel">
+          <div class="journey-intro reveal-on-scroll">
+            <h2>The Journey So Far</h2>
+            <p class="journey-subtitle">
+              From writing my first line of code to co-founding Henu Os—a story of passion, persistence, and building
+              solutions that matter.
+            </p>
+          </div>
+
+          <div class="journey-timeline-container">
+            <div class="journey-timeline-line"></div>
+            
+            <div class="journey-milestone milestone-left reveal-on-scroll" data-year="2023">
+              <div class="milestone-marker">
+                <span class="milestone-year">2023</span>
+                <div class="milestone-dot"></div>
+              </div>
+              <div class="milestone-content tilt-card" data-tilt>
+                <div class="milestone-icon">🚀</div>
+                <h3>The Beginning</h3>
+                <p class="milestone-description">
+                  Started my journey into fullstack development and Flutter. Built my first production apps,
+                  learned modern frameworks, and discovered my passion for creating seamless digital experiences.
+                </p>
+                <div class="milestone-achievements">
+                  <span class="achievement-badge">First Flutter App</span>
+                  <span class="achievement-badge">Backend APIs</span>
+                  <span class="achievement-badge">15+ Projects</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-milestone milestone-right reveal-on-scroll" data-year="2024">
+              <div class="milestone-marker">
+                <span class="milestone-year">2024</span>
+                <div class="milestone-dot"></div>
+              </div>
+              <div class="milestone-content tilt-card" data-tilt>
+                <div class="milestone-icon">⚡</div>
+                <h3>Mastery & Growth</h3>
+                <p class="milestone-description">
+                  Mastered fullstack development and Flutter, building production-ready applications. Gained expertise
+                  in scalable architecture, performance optimization, and delivering solutions that handle real-world scale.
+                </p>
+                <div class="milestone-achievements">
+                  <span class="achievement-badge">Fullstack Expert</span>
+                  <span class="achievement-badge">Flutter Mastery</span>
+                  <span class="achievement-badge">Scalable Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-milestone milestone-left reveal-on-scroll" data-year="2025">
+              <div class="milestone-marker">
+                <span class="milestone-year">2025</span>
+                <div class="milestone-dot milestone-dot-active"></div>
+              </div>
+              <div class="milestone-content tilt-card milestone-current" data-tilt>
+                <div class="milestone-icon">🌟</div>
+                <h3>Co-founding Henu Os</h3>
+                <p class="milestone-description">
+                  Co-founded Henu Os with Sidharth Singh. Leading technical architecture, product development, and
+                  building innovative solutions that bridge web, mobile, and cloud ecosystems. Turning ideas into
+                  scalable products that make a real impact.
+                </p>
+                <div class="milestone-achievements">
+                  <span class="achievement-badge achievement-badge-active">Co-founder</span>
+                  <span class="achievement-badge achievement-badge-active">Henu Os</span>
+                  <span class="achievement-badge achievement-badge-active">Technical Lead</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="journey-philosophy reveal-on-scroll">
+            <div class="philosophy-card tilt-card" data-tilt>
+              <h3>My Philosophy</h3>
+              <p>
+                Every line of code tells a story. I believe in building solutions that are not just functional,
+                but meaningful. As a fullstack engineer and Flutter developer, I combine technical excellence
+                with user-centric design to create products that truly make a difference.
+              </p>
+              <div class="philosophy-values">
+                <div class="value-item">
+                  <span class="value-icon">🎯</span>
+                  <div>
+                    <strong>Purpose-Driven</strong>
+                    <span>Building solutions that solve real problems</span>
+                  </div>
+                </div>
+                <div class="value-item">
+                  <span class="value-icon">⚡</span>
+                  <div>
+                    <strong>Performance First</strong>
+                    <span>Optimized code that scales effortlessly</span>
+                  </div>
+                </div>
+                <div class="value-item">
+                  <span class="value-icon">🤝</span>
+                  <div>
+                    <strong>Collaborative</strong>
+                    <span>Working with teams to achieve great outcomes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subpage" data-subpage="about-education" role="tabpanel">
+          <div class="timeline">
+            <div class="timeline-item tilt-card" data-tilt>
+              <span class="timeline-year">2021 — 2025</span>
+              <h3>B.Tech in Computer Science</h3>
+              <p>B.Tech Final Year Student specializing in full-stack engineering, Flutter, and DevOps.</p>
+            </div>
+            <div class="timeline-item tilt-card" data-tilt>
+              <span class="timeline-year">2020 — Present</span>
+              <h3>Continuous Learning</h3>
+              <p>25+ advanced labs, bootcamps, and certifications covering AI, cybersecurity, and AWS cloud full stack solutions.</p>
+            </div>
+            <div class="timeline-item tilt-card" data-tilt>
+              <span class="timeline-year">2018 — 2020</span>
+              <h3>Foundational Coursework</h3>
+              <p>Mathematics, data structures, and system design shaping strong analytical thinking.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="subpage" data-subpage="about-experience" role="tabpanel">
+          <div class="experience-grid">
+            <div class="experience-card tilt-card" data-tilt>
+              <h3>Co-founder @ Henu Os</h3>
+              <p>
+                Co-founded Henu Os in 2025 with Sidharth Singh. Leading technical architecture and product development,
+                responsible for building scalable fullstack solutions, making strategic technical decisions, and
+                collaborating with the team to bring innovative products to market.
+              </p>
+              <ul>
+                <li>Co-founded with Sidharth Singh in 2025</li>
+                <li>Fullstack application architecture & development</li>
+                <li>Flutter mobile app development & optimization</li>
+                <li>Technical leadership & team collaboration</li>
+                <li>Product strategy & roadmap planning</li>
+              </ul>
+            </div>
+            <div class="experience-card tilt-card" data-tilt>
+              <h3>Full Stack Development</h3>
+              <p>
+                Building end-to-end full stack applications with modern frameworks. From RESTful APIs to responsive
+                frontends, delivering scalable solutions with AWS Cloud and cybersecurity practices that handle real-world traffic and user demands.
+              </p>
+              <ul>
+                <li>Backend APIs with Node.js, Express, Django</li>
+                <li>Frontend development with React, JavaScript</li>
+                <li>Database design & optimization (SQL & NoSQL)</li>
+                <li>AWS Cloud deployment & DevOps practices</li>
+                <li>Cybersecurity & secure application development</li>
+              </ul>
+            </div>
+            <div class="experience-card tilt-card" data-tilt>
+              <h3>Flutter Mobile Development</h3>
+              <p>
+                Creating cross-platform mobile applications with Flutter that deliver native performance
+                on both iOS and Android. Focused on beautiful UI, smooth animations, and optimal performance.
+              </p>
+              <ul>
+                <li>Cross-platform mobile app development</li>
+                <li>State management & architecture patterns</li>
+                <li>Custom widgets & UI components</li>
+                <li>Performance optimization & testing</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="page-block section-padding skills-page-unified" data-page="skills">
+      <header class="page-header skills-header-unified">
+        <div>
+          <span class="heading-kicker">Skills</span>
+          <h2>Multidisciplinary stack with evolving depth</h2>
+          <p>Navigate core capabilities, supporting tools, and human skills that drive each launch.</p>
+        </div>
+        <div class="skills-nav-buttons" role="tablist">
+          <button class="skill-nav-btn is-active" data-skill-section="core-skills" role="tab" aria-selected="true">
+            <span class="btn-icon">💻</span>
+            <span class="btn-text">Core Skills</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button class="skill-nav-btn" data-skill-section="tools-frameworks" role="tab" aria-selected="false">
+            <span class="btn-icon">🛠️</span>
+            <span class="btn-text">Tools & Frameworks</span>
+            <span class="btn-glow"></span>
+          </button>
+          <button class="skill-nav-btn" data-skill-section="soft-skills" role="tab" aria-selected="false">
+            <span class="btn-icon">🤝</span>
+            <span class="btn-text">Soft Skills</span>
+            <span class="btn-glow"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="skills-scroll-container" id="skillsScrollContainer">
+        <!-- Core Skills Section -->
+        <section id="core-skills" class="skills-section skills-section-3d" data-section="core-skills">
+          <div class="section-header-3d">
+            <h2 class="section-title-3d">Core Skills</h2>
+            <p class="section-subtitle-3d">Fundamental technologies I work with daily</p>
+          </div>
+          <div class="skills-grid-3d">
+            <div class="skill-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="skill-card-inner">
+                <div class="skill-icon-3d">
+                  <span>HTML</span>
+                </div>
+                <div class="skill-meta-3d">
+                  <h3>HTML5</h3>
+                  <div class="skill-bar-3d" data-progress="92">
+                    <div class="skill-progress-fill"></div>
+                    <span class="skill-percentage">92%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-card-glow"></div>
+            </div>
+            <div class="skill-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="skill-card-inner">
+                <div class="skill-icon-3d">
+                  <span>CSS</span>
+                </div>
+                <div class="skill-meta-3d">
+                  <h3>CSS / Tailwind</h3>
+                  <div class="skill-bar-3d" data-progress="88">
+                    <div class="skill-progress-fill"></div>
+                    <span class="skill-percentage">88%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-card-glow"></div>
+            </div>
+            <div class="skill-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="skill-card-inner">
+                <div class="skill-icon-3d">
+                  <span>JS</span>
+                </div>
+                <div class="skill-meta-3d">
+                  <h3>JavaScript</h3>
+                  <div class="skill-bar-3d" data-progress="84">
+                    <div class="skill-progress-fill"></div>
+                    <span class="skill-percentage">84%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-card-glow"></div>
+            </div>
+            <div class="skill-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="skill-card-inner">
+                <div class="skill-icon-3d">
+                  <span>FL</span>
+                </div>
+                <div class="skill-meta-3d">
+                  <h3>Flutter</h3>
+                  <div class="skill-bar-3d" data-progress="86">
+                    <div class="skill-progress-fill"></div>
+                    <span class="skill-percentage">86%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-card-glow"></div>
+            </div>
+            <div class="skill-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="skill-card-inner">
+                <div class="skill-icon-3d">
+                  <span>PY</span>
+                </div>
+                <div class="skill-meta-3d">
+                  <h3>Python</h3>
+                  <div class="skill-bar-3d" data-progress="82">
+                    <div class="skill-progress-fill"></div>
+                    <span class="skill-percentage">82%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-card-glow"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tools & Frameworks Section -->
+        <section id="tools-frameworks" class="skills-section skills-section-3d" data-section="tools-frameworks">
+          <div class="section-header-3d">
+            <h2 class="section-title-3d">Tools & Frameworks</h2>
+            <p class="section-subtitle-3d">Technologies and frameworks that power my projects</p>
+          </div>
+          <div class="tools-grid-3d">
+            <div class="tool-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="tool-card-inner">
+                <div class="tool-icon-3d">🎨</div>
+                <h3>Frontend</h3>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3 / Tailwind</li>
+                  <li>JavaScript</li>
+                  <li>React.js</li>
+                  <li>Flutter (UI)</li>
+                </ul>
+              </div>
+              <div class="tool-card-glow"></div>
+            </div>
+            <div class="tool-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="tool-card-inner">
+                <div class="tool-icon-3d">⚙️</div>
+                <h3>Backend</h3>
+                <ul>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>Django</li>
+                  <li>Firebase</li>
+                  <li>Python</li>
+                </ul>
+              </div>
+              <div class="tool-card-glow"></div>
+            </div>
+            <div class="tool-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="tool-card-inner">
+                <div class="tool-icon-3d">🚀</div>
+                <h3>DevOps</h3>
+                <ul>
+                  <li>Docker</li>
+                  <li>Jenkins</li>
+                  <li>Git & GitHub</li>
+                  <li>CI/CD Pipelines</li>
+                </ul>
+              </div>
+              <div class="tool-card-glow"></div>
+            </div>
+            <div class="tool-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="tool-card-inner">
+                <div class="tool-icon-3d">☁️</div>
+                <h3>Cloud & Security</h3>
+                <ul>
+                  <li>AWS Cloud</li>
+                  <li>Cybersecurity</li>
+                  <li>Firebase Hosting</li>
+                  <li>Vercel / Netlify</li>
+                </ul>
+              </div>
+              <div class="tool-card-glow"></div>
+            </div>
+            <div class="tool-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="tool-card-inner">
+                <div class="tool-icon-3d">🗄️</div>
+                <h3>Database</h3>
+                <ul>
+                  <li>MySQL</li>
+                  <li>MongoDB</li>
+                  <li>SQLite</li>
+                </ul>
+              </div>
+              <div class="tool-card-glow"></div>
+            </div>
+            <div class="tool-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="tool-card-inner">
+                <div class="tool-icon-3d">🤖</div>
+                <h3>AI / Gen AI</h3>
+                <ul>
+                  <li>OpenAI API</li>
+                  <li>TensorFlow</li>
+                  <li>Scikit-learn</li>
+                  <li>Pandas / NumPy</li>
+                </ul>
+              </div>
+              <div class="tool-card-glow"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Soft Skills Section -->
+        <section id="soft-skills" class="skills-section skills-section-3d" data-section="soft-skills">
+          <div class="section-header-3d">
+            <h2 class="section-title-3d">Soft Skills</h2>
+            <p class="section-subtitle-3d">Human skills that complement technical expertise</p>
+          </div>
+          <div class="soft-skills-grid-3d">
+            <div class="soft-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="soft-card-inner">
+                <div class="soft-icon-3d">🤝</div>
+                <h3>Collaboration</h3>
+                <p>Thrives in cross-functional teams, bridging design and engineering conversations.</p>
+              </div>
+              <div class="soft-card-glow"></div>
+            </div>
+            <div class="soft-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="soft-card-inner">
+                <div class="soft-icon-3d">💬</div>
+                <h3>Communication</h3>
+                <p>Clarifies complex technical details with human-centred storytelling and visuals.</p>
+              </div>
+              <div class="soft-card-glow"></div>
+            </div>
+            <div class="soft-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="soft-card-inner">
+                <div class="soft-icon-3d">👥</div>
+                <h3>Leadership</h3>
+                <p>Guides peers through workshops, mentorship, and community events focused on tech literacy.</p>
+              </div>
+              <div class="soft-card-glow"></div>
+            </div>
+            <div class="soft-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="soft-card-inner">
+                <div class="soft-icon-3d">🔄</div>
+                <h3>Adaptability</h3>
+                <p>Rapidly explores new frameworks and emerging tech to deliver resilient solutions.</p>
+              </div>
+              <div class="soft-card-glow"></div>
+            </div>
+            <div class="soft-card-3d tilt-card-3d reveal-on-scroll" data-tilt>
+              <div class="soft-card-inner">
+                <div class="soft-icon-3d">❤️</div>
+                <h3>Empathy</h3>
+                <p>Designs with accessibility, inclusion, and emotional intelligence at the core.</p>
+              </div>
+              <div class="soft-card-glow"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page-block section-padding" data-page="projects">
+      <header class="page-header">
+        <div>
+          <span class="heading-kicker">Projects</span>
+          <h2>Immersive builds, real-world launches</h2>
+          <p>Dive into feature showcases, in-depth collections, and visual galleries preserving every project detail.</p>
+        </div>
+        <div class="page-subnav" role="tablist">
+          <button class="subnav-btn is-active" data-subpage-target="projects-showcase" role="tab" aria-selected="true">Showcase</button>
+          <button class="subnav-btn" data-subpage-target="projects-collections" role="tab" aria-selected="false">Collections</button>
+          <button class="subnav-btn" data-subpage-target="projects-gallery" role="tab" aria-selected="false">Gallery</button>
+        </div>
+      </header>
+
+      <div class="subpage-wrapper">
+        <article class="subpage is-active" data-subpage="projects-showcase" role="tabpanel">
+          <div class="project-grid">
+            <!-- Projects will be dynamically loaded from projects-data.js -->
+          </div>
+        </article>
+
+        <article class="subpage" data-subpage="projects-collections" role="tabpanel">
+          <div class="collection-grid">
+            <!-- Collections will be dynamically loaded from projects-data.js -->
+          </div>
+        </article>
+
+        <article class="subpage" data-subpage="projects-gallery" role="tabpanel">
+          <div class="project-gallery">
+            <!-- Gallery items will be dynamically loaded from projects-data.js -->
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="page-block section-padding" data-page="certificates">
+      <header class="page-header">
+        <div>
+          <span class="heading-kicker">Certificates</span>
+          <h2>Recognitions that fuel continuous learning</h2>
+          <p>Browse the gallery and catalog for every credential and achievement.</p>
+        </div>
+        <div class="page-subnav" role="tablist">
+          <button class="subnav-btn is-active" data-subpage-target="cert-gallery" role="tab" aria-selected="true">Gallery</button>
+          <button class="subnav-btn" data-subpage-target="cert-catalog" role="tab" aria-selected="false">Catalog</button>
+        </div>
+      </header>
+
+      <div class="subpage-wrapper">
+        <article class="subpage is-active certificates-flip-page" data-subpage="cert-gallery" role="tabpanel">
+          <div class="certificate-grid certificates-flip-grid">
+            <!-- Certificates will be dynamically loaded from certificates-data.js -->
+          </div>
+        </article>
+
+        <article class="subpage" data-subpage="cert-catalog" role="tabpanel">
+          <div class="catalog-list">
+            <!-- Certificates will be dynamically loaded from certificates-data.js -->
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page-block section-padding" data-page="contact">
+      <header class="page-header">
+        <div>
+          <span class="heading-kicker">Contact</span>
+          <h2>Let's build the future together</h2>
+          <p>Reach out through direct links or send a message. I'm always open to collaboration and new opportunities.</p>
+        </div>
+        <div class="page-subnav" role="tablist">
+          <button class="subnav-btn is-active" data-subpage-target="contact-connect" role="tab" aria-selected="true">Connect</button>
+          <button class="subnav-btn" data-subpage-target="contact-message" role="tab" aria-selected="false">Message</button>
+        </div>
+      </header>
+
+      <div class="subpage-wrapper">
+        <article class="subpage is-active" data-subpage="contact-connect" role="tabpanel">
+          <div class="contact-card tilt-card reveal-on-scroll" data-tilt>
+            <h3>Connect</h3>
+            <ul class="contact-links">
+              <li>
+                <span class="contact-icon">🐙</span>
+                <a href="https://github.com/Rahulrakhi143" target="_blank" rel="noreferrer">github.com/Rahulrakhi143</a>
+              </li>
+              <li>
+                <span class="contact-icon">🔗</span>
+                <a href="https://www.linkedin.com/in/rahul-sain-88a963288" target="_blank" rel="noreferrer">linkedin.com/in/rahulsain</a>
+              </li>
+              <li>
+                <span class="contact-icon">✉️</span>
+                <a href="mailto:rsurendrasen90@gmail.com">rsurendrasen90@gmail.com</a>
+              </li>
+              <li>
+                <span class="contact-icon">📞</span>
+                <a href="tel:+918079018281">+91 8079018281</a>
+              </li>
+              <li>
+                <span class="contact-icon">📸</span>
+                <a href="https://www.instagram.com/rahul_sen1251/" target="_blank" rel="noreferrer">@rahulsain.official</a>
+              </li>
+              <li>
+                <span class="contact-icon">🎮</span>
+                <span>Discord: rahul_dev#rahulsen0228</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="subpage" data-subpage="contact-message" role="tabpanel">
+          <form class="contact-form multi-step-form tilt-card" data-tilt id="contactForm">
+            <div class="form-step active" data-step="1">
+              <h3>Step 1: Your Information</h3>
+              <div class="form-row">
+                <label>
+                  Name
+                  <input type="text" name="name" placeholder="Jane Doe" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  Phone (Optional)
+                  <input type="tel" name="phone" placeholder="+1 234 567 8900" />
+                </label>
+                <label>
+                  Subject
+                  <input type="text" name="subject" placeholder="Project Inquiry" required />
+                </label>
+              </div>
+              <button type="button" class="primary-btn form-next-btn">Next →</button>
+            </div>
+            
+            <div class="form-step" data-step="2">
+              <h3>Step 2: Project Details</h3>
+              <label>
+                Project Type
+                <select name="projectType" required>
+                  <option value="">Select a type</option>
+                  <option value="fullstack">Full Stack Development</option>
+                  <option value="flutter">Flutter Mobile App</option>
+                  <option value="consulting">Technical Consulting</option>
+                  <option value="other">Other</option>
+                </select>
+              </label>
+              <label>
+                Budget Range
+                <select name="budget" required>
+                  <option value="">Select budget range</option>
+                  <option value="small">$1k - $5k</option>
+                  <option value="medium">$5k - $20k</option>
+                  <option value="large">$20k+</option>
+                  <option value="discuss">Let's Discuss</option>
+                </select>
+              </label>
+              <label>
+                Timeline
+                <input type="text" name="timeline" placeholder="e.g., 3 months" required />
+              </label>
+              <div class="form-nav-buttons">
+                <button type="button" class="ghost-btn form-prev-btn">← Previous</button>
+                <button type="button" class="primary-btn form-next-btn">Next →</button>
+              </div>
+            </div>
+            
+            <div class="form-step" data-step="3">
+              <h3>Step 3: Your Message</h3>
+              <label>
+                Message
+                <textarea rows="6" name="message" placeholder="Tell me about your project, goals, and any specific requirements..." required></textarea>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="newsletter" />
+                <span>Subscribe to updates about new projects and tech insights</span>
+              </label>
+              <div class="form-nav-buttons">
+                <button type="button" class="ghost-btn form-prev-btn">← Previous</button>
+                <button type="submit" class="primary-btn">Send Message 🚀</button>
+              </div>
+            </div>
+            
+            <div class="form-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 33.33%"></div>
+              </div>
+              <span class="progress-text">Step <span id="currentStep">1</span> of 3</span>
+            </div>
+          </form>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-glow">
+    <span>© <span id="year"></span> Rahul Sain. Crafted with curiosity & care.</span>
+  </footer>
+
+  <script src="projects-data.js?v=1.0"></script>
+  <script src="certificates-data.js?v=1.0"></script>
+  <script src="script.js"></script>
+  
+  <!-- Admin Panel Link (Hidden - Access via admin.html) -->
+  <a href="admin.html" style="position: fixed; bottom: 20px; right: 20px; background: rgba(94, 240, 255, 0.1); border: 1px solid rgba(94, 240, 255, 0.3); padding: 10px 15px; border-radius: 8px; color: #5ef0ff; text-decoration: none; font-size: 12px; opacity: 0.5; transition: opacity 0.3s; z-index: 9999;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">⚙️ Admin</a>
+</body>
+</html>
+
+
+
